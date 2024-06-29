@@ -1,0 +1,331 @@
+/* General styles for the entire page */
+* {
+    padding: 0;
+
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Playfair Display", serif;
+    
+    font-optical-sizing: auto;
+    font-weight: normal;
+
+    font-style: normal;
+    text-align: center;
+
+}
+header {
+    width: 100%;
+    background-color: #FFB88A;
+    opacity: 0.8;
+    color: rgb(124, 45, 45);
+    padding: 5px 0;
+    height: auto;
+    position: fixed;
+    height: 40px;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the navbar is on top */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: rgb(124, 45, 45);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 15px;
+}
+
+.nav-links a {
+    color: rgb(124, 45, 45);
+    text-decoration: none;
+    font-size: 1em;
+    content: '';
+    transition: top 100ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav-links a:hover {
+    color: #ddd;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 30px; /* Adjust according to your header height */
+        left: 0;
+        background-color: rgba(51, 51, 51, 0.8);
+        padding: 5px 0;
+        z-index: 999; /* Ensure the menu covers the content */
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 5px 0;
+    }
+}
+
+.page {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background: url('6.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	min-height: 100vh;
+    color: #7c6161;
+}
+
+
+/* Set the body background image */
+body {
+    background-image: url('11.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Fixed background for parallax effect */
+    margin: 0;
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Container to hold the overlay content */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.heading{
+	text-align: center;
+	margin: auto;
+	color: rgb(72, 39, 39);
+    font-size: 1em;
+    text-shadow: 2px 2px 4px rgba(128, 125, 125, 0.7);
+	flex-direction: column;
+	display: block;
+	
+}
+
+/* Overlay to hold the inner content */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+	z-index: 1; /* Ensure content is above the background image */
+    background-size: cover; /* Ensure the background image covers the entire content area */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+/* Style for the box containing the image and input */
+.box {
+	background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the box */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+	display: block;
+}
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(134, 232, 231, 0.064);
+    border-radius: 8px;
+}
+
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th {
+    height: 30px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.form {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form input[type="text"], .form input[type="number"], .form input[type="email"], .form input[type="password"], .form select, .form textarea {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #A67A5B;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #dfab85;
+}
+
+#content {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: = white;
+}
+
+
+
+/* Style for the refresh button */
+.refresh {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+.refresh:hover {
+    text-decoration: underline;
+}
+
+.search {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 250px; /* Adjust width as needed */
+}
+form {
+    font-family: "Merriweather", serif;
+    background: #f7f3e9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #A67A5B;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.error {
+    color: #A67A5B;
+    font-size: 0.875em;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+p {
+    text-align: center;
+}
+
+p a {
+    color: #A67A5B;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="submit"] {
+        padding: 12px;
+        font-size: 0.875em;
+    }
+}

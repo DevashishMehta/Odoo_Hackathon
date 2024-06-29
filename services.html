@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Information</title>
+    <style>
+  
+body {
+    background-image: url('11.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Fixed background for parallax effect */
+    margin: 0;
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1{
+	text-align: center;
+	margin: auto;
+	color: rgb(72, 39, 39);
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(128, 125, 125, 0.7);
+	flex-direction: column;
+	display: block;
+	
+}
+.box {
+	background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the box */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+	display: block;
+}
+header {
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the navbar is on top */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: top 50ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav-links a:hover {
+    color: #ddd;
+}
+.container{
+    text-align: center;
+}
+    </style>
+    
+  </head>
+  <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">To Do List</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign-Up</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+      
+    <h1>Services provided by us:</h1><br>
+    <h3>Welcome to To-Do List , your ultimate tool for organizing tasks and boosting productivity!</h3>
+    <h3>Discover how To-Do List  simplifies your day with efficient task management.</h3>
+    <ul>Our apllication provides:"Effortlessly creating, organizing, and prioritizing tasks.</ul>
+    <ul>Collaborating in real-time with colleagues, friends, or family.</ul>
+    <ul>Receiving reminders and notifications to stay on track.</ul>
+    <ul>Customizing lists and tasks to fit your workflow.</ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a21a405680.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">To Do List</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign-Up</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="box">
+            <img src="6.jpg">
+            <div class="heading">
+                <h1>To-Do List</h1>
+                <input type="text" id="searchTitle" class="search" placeholder="Search tasks by title...">
+            </div><br>
+            <div class="filters">
+                <input type="text" id="filterAssignee" placeholder="Search by Assignee">
+                <input type="date" id="filterDueDate">
+                <select id="filterPriority">
+                    <option value="">Filter by Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="">Filter by Status</option>
+                    <option value="complete">Complete</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+                <button id="clearFilters">Clear Filters</button>
+            </div>
+            <p class="no-tasks-message" style="display: none;">There are no tasks. Create one below!</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Assignee</th>
+                        <th>Priority</th>
+                        <th>Due Date</th>
+                        <th>Comments</th>
+                        <th>Added</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Tasks will be added here dynamically -->
+                </tbody>
+            </table>
+            <div class="form">
+                <form id="taskForm">
+                    <input type="text" name="task" id="task" placeholder="Task" required>
+                    <textarea name="description" id="description" placeholder="Description" rows="3"></textarea>
+                    <input type="text" name="assignee" id="assignee" placeholder="Assignee">
+                    <select name="priority" id="priority" required>
+                        <option value="" disabled selected>Priority Level</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <input type="date" name="dueDate" id="dueDate" required><br>
+                    <textarea name="comments" id="comments" placeholder="Comments" rows="2"></textarea>
+                    <select name="status" id="status" required>
+                        <option value="" disabled selected>Status</option>
+                        <option value="complete">Complete</option>
+                        <option value="incomplete">Incomplete</option>
+                    </select>
+                    <input type="submit" value="Add Task">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="tasks.js"></script>
+</body>
+</html>
