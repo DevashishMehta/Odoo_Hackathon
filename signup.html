@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+     
+
+input[type="submit"] {
+    background: #A67A5B;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 80px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 100ms cubic-bezier(0.86, 0, 0.07, 1);
+    display: block;
+    margin: 0 auto;  /* Center the button horizontally */
+    text-align: center;  /* Center the text inside the button */
+}
+
+input[type="submit"]:hover {
+    background: #D5B895;
+}
+
+.error {
+    color: #A67A5B;
+    font-size: 0.875em;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+p {
+    text-align: center;
+}
+
+p a {
+    color: #A67A5B;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="submit"] {
+        padding: 8px;
+        font-size: 0.875em;
+    }
+}
+
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">To Do List</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign-Up</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class = "page">
+    <form id="signupForm">
+        <br>
+        <h1>Sign Up</h1>
+        <label for="FName">First Name</label>
+        <input type="text" id="FName" name="FName" placeholder="Enter your First Name" required><br>
+        <span id="FNameError" class="error"></span>
+
+        <label for="LName">Last Name</label>
+        <input type="text" id="LName" name="LName" placeholder="Enter your Last Name" required><br>
+        <span id="LNameError" class="error"></span>
+
+        <label for="Phone">Phone</label>
+        <div class="phone-container">
+            <select name="Code" id="Code"> 
+                <option value="India">India: +91</option>
+                <option value="US">USA: +1</option>
+            </select>
+            <input type="tel" id="Phone" name="Phone" placeholder="Enter your Phone Number" required><br>
+        </div><br>
+        <span id="PhoneError" class="error"></span>
+
+        <label for="Email">Email Id</label>
+        <input type="email" id="Email" name="Email" placeholder="eg - lara@gmail.com" required><br>
+
+        <label for="Password">Password</label>
+        <input type="password" id="Password" name="Password" placeholder="Enter your Password" required><br>
+
+
+        <label for="add">Address</label>
+        <input type="text" id="add" name="add" required><br>
+
+        <input type="submit" value="Sign Up">
+        <p>Already have an account? <a href="login.html">Log In</a></p>
+    </form>
+
+    <script src="script.js">
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('FName').value,
+                lastName: document.getElementById('LName').value,
+                phoneCode: document.getElementById('Code').value,
+                phoneNumber: document.getElementById('Phone').value,
+                email: document.getElementById('Email').value,
+                password: document.getElementById('Password').value,
+                country: document.getElementById('country').value,
+                city: document.getElementById('city').value,
+                address: document.getElementById('add').value,
+            };
+
+            const response = await fetch('http://localhost:5000/api/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                alert('Sign-up successful!');
+                window.location.href = 'login.html';  // Redirect to login page
+            } else {
+                alert('Error signing up');
+            }
+        });
+    </script>
+    </div>
+</body>
+</html>
